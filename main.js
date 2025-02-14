@@ -1,14 +1,14 @@
 document.getElementById('startButton').addEventListener('click', function() {
-    // Скрываем кнопку после первого клика
+    
     this.style.display = 'none';
 
-    // Запуск музыки
-    const audio = new Audio('./love.mp3'); // Путь к вашему файлу
+
+    const audio = new Audio('./love.mp3'); 
     audio.loop = true;
-    audio.volume = 0.3; // Уменьшаем громкость
+    audio.volume = 0.3; 
     audio.play();
 
-    // Запуск анимации текста
+    
     const textElement = document.getElementById('typing-text');
     const messages = [
         "Привет, я хочу признаться тебе в одном важном чувстве. ",
@@ -62,30 +62,7 @@ document.getElementById('startButton').addEventListener('click', function() {
 
     setTimeout(typeEffect, 2000);
 
-    function showButtons() {
-        const buttonsContainer = document.createElement('div');
-        buttonsContainer.classList.add('buttons-container');
-
-        const yesButton = document.createElement('button');
-        yesButton.innerText = "Да";
-        yesButton.classList.add('button');
-        yesButton.onclick = () => {
-            textElement.innerHTML = "Рад, что ты не отвергла мои чувства. Давай встретимся 15.02 в 20:10 у главного входа в драмтеатр";
-            buttonsContainer.remove();
-        };
-
-        const noButton = document.createElement('button');
-        noButton.innerText = "Нет";
-        noButton.classList.add('button');
-        noButton.onclick = () => {
-            textElement.innerHTML = "Ладно, хорошо)";
-            buttonsContainer.remove();
-        };
-
-        buttonsContainer.appendChild(yesButton);
-        buttonsContainer.appendChild(noButton);
-        document.body.appendChild(buttonsContainer);
-    }
+   
 
     function createHeart() {
         const heart = document.createElement('div');
